@@ -5,6 +5,7 @@ __pycache__/
 # C extensions
 *.so
 mini-venv/
+../mini-venv/
 # Distribution / packaging
 .Python
 env/
@@ -28,7 +29,7 @@ var/
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
-
+mini-venv
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
