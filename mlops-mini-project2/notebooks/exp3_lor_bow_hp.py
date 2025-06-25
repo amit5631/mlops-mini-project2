@@ -147,4 +147,4 @@ with mlflow.start_run():
     mlflow.log_artifact(__file__)
 
     # Log model
-    mlflow.sklearn.log_model(grid_search.best_estimator_, "model")
+    #mlflow.sklearn.log_model(grid_search.best_estimator_, "model")
