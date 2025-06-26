@@ -1,4 +1,4 @@
 [core]
-    remote = myremote
-['remote "myremote"']
-    url = C:\Users\Amit\AppData\Local\Temp
+    remote = myremotee
+['remote "myremotee"']
+    url = s3://amittest-s3
