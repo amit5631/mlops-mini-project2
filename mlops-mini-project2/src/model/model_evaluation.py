@@ -12,21 +12,21 @@ import dagshub
 import os
 
 # Set up DagsHub credentials for MLflow tracking
-# dagshub_token = os.getenv("DAGSHUB_PAT")
-# if not dagshub_token:
-#     raise EnvironmentError("DAGSHUB_PAT environment variable is not set")
+dagshub_token = os.getenv("DAGSHUB_PAT")
+if not dagshub_token:
+    raise EnvironmentError("DAGSHUB_PAT environment variable is not set")
 
-# os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
-# os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
+os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
+os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
 
-# dagshub_url = "https://dagshub.com"
-# repo_owner = "campusx-official"
-# repo_name = "mlops-mini-project"
+dagshub_url = "https://dagshub.com"
+repo_owner = "amit5631"
+repo_name = "mlops-mini-project2"
 
-# Set up MLflow tracking URI
-# mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
-mlflow.set_tracking_uri('https://dagshub.com/amit5631/mlops-mini-project2.mlflow')
-dagshub.init(repo_owner='amit5631', repo_name='mlops-mini-project2', mlflow=True)
+#Set up MLflow tracking URI
+mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
+# mlflow.set_tracking_uri('https://dagshub.com/amit5631/mlops-mini-project2.mlflow')
+# dagshub.init(repo_owner='amit5631', repo_name='mlops-mini-project2', mlflow=True)
 # logging configuration
 logger = logging.getLogger('model_evaluation')
 logger.setLevel('DEBUG')
@@ -149,7 +149,7 @@ def main():
             mlflow.log_artifact('reports/metrics.json')
 
             # Log the model info file to MLflow
-            #mlflow.log_artifact('reports/model_info.json')
+            mlflow.log_artifact('reports/model_info.json')
 
             # Log the evaluation errors log file to MLflow
             mlflow.log_artifact('mlops-mini-project2\\model_evaluation_errors.log')
